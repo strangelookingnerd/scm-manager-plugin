@@ -20,8 +20,8 @@
 
   <properties>
     <!-- Baseline Jenkins version you use to build the plugin. Users must have this version or newer to run. -->
-    <jenkins.version>2.190.3</jenkins.version>
-    <slf4j.version>1.7.26</slf4j.version>
+    <jenkins.version>2.319.2</jenkins.version>
+    <slf4j.version>1.7.32</slf4j.version>
     <java.level>8</java.level>
     <!-- Other properties you may want to use:
       ~ jenkins-test-harness.version: Jenkins Test Harness version you use to test the plugin. For Jenkins version >= 1.580.1 use JTH 2.0 or higher.
@@ -43,19 +43,19 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>structs</artifactId>
-      <version>1.20</version>
+      <version>308.v852b473a2b8c</version>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>credentials</artifactId>
-      <version>2.3.11</version>
+      <version>1074.v60e6c29b_b_44b_</version>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>ssh-credentials</artifactId>
-      <version>1.17.4</version>
+      <version>1.19</version>
     </dependency>
 
     <dependency>
@@ -67,7 +67,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>trilead-api</artifactId>
-      <version>1.0.5</version>
+      <version>1.0.13</version>
     </dependency>
 
     <!-- scm plugins should be optional -->
@@ -75,48 +75,55 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>git</artifactId>
-      <version>3.5.0</version>
+      <version>4.10.2</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>subversion</artifactId>
-      <version>2.12.2</version>
+      <version>2.15.2</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>mercurial</artifactId>
-      <version>2.11</version>
+      <version>2.16</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>branch-api</artifactId>
-      <version>2.0.11</version>
+      <version>2.7.0</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-multibranch</artifactId>
-      <version>2.9</version>
+      <version>706.vd43c65dec013</version>
       <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>jackson2-api</artifactId>
-      <version>2.10.0</version>
+      <version>2.13.1-246.va8a9f3eaf46a</version>
     </dependency>
 
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>2.28.2</version>
+      <version>4.2.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
+      <version>3.2</version>
       <scope>test</scope>
     </dependency>
 
@@ -130,13 +137,13 @@
     <dependency>
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
-      <version>2.10</version>
+      <version>2.10.13</version>
     </dependency>
 
     <dependency>
       <groupId>com.github.tomakehurst</groupId>
       <artifactId>wiremock-jre8</artifactId>
-      <version>2.23.2</version>
+      <version>2.32.0</version>
       <scope>test</scope>
     </dependency>
 
@@ -169,7 +176,7 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.16.1</version>
+      <version>3.22.0</version>
       <scope>test</scope>
     </dependency>
 
@@ -182,6 +189,12 @@
       <optional>true</optional>
     </dependency>
 
+    <dependency>
+      <groupId>org.kohsuke</groupId>
+      <artifactId>access-modifier-annotation</artifactId>
+      <version>1.25</version>
+    </dependency>
+
   </dependencies>
 
   <!-- required for RequireUpperBoundDeps -->
@@ -192,67 +205,73 @@
       <dependency>
         <groupId>org.jenkins-ci</groupId>
         <artifactId>annotation-indexer</artifactId>
-        <version>1.12</version>
+        <version>1.16</version>
       </dependency>
 
       <dependency>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plain-credentialsId</artifactId>
-        <version>1.1</version>
+        <version>1.7</version>
       </dependency>
 
       <dependency>
         <groupId>org.jenkins-ci.plugins.workflow</groupId>
         <artifactId>workflow-scm-step</artifactId>
-        <version>2.6</version>
+        <version>2.13</version>
       </dependency>
 
       <dependency>
         <groupId>org.jenkins-ci.plugins.workflow</groupId>
         <artifactId>workflow-step-api</artifactId>
-        <version>2.22</version>
+        <version>622.vb_8e7c15b_c95a_</version>
       </dependency>
 
       <dependency>
         <groupId>org.jenkins-ci.plugins.workflow</groupId>
         <artifactId>workflow-api</artifactId>
-        <version>2.40</version>
+        <version>1122.v7a_916f363c86</version>
       </dependency>
 
       <dependency>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>junit</artifactId>
-        <version>1.29</version>
+        <version>1.53</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-core</artifactId>
+        <version>2.2</version>
       </dependency>
 
       <dependency>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>scm-api</artifactId>
-        <version>2.6.3</version>
+        <version>2.6.5</version>
       </dependency>
 
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-annotations</artifactId>
-        <version>2.10.0</version>
+        <version>2.13.1</version>
       </dependency>
 
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>2.10.0</version>
+        <version>2.13.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>script-security</artifactId>
-        <version>1.71</version>
+        <version>1131.v8b_b_5eda_c328e</version>
       </dependency>
 
       <dependency>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>matrix-project</artifactId>
-        <version>1.17</version>
+        <version>1.20</version>
       </dependency>
 
       <!-- fix require upper bound dependencies error for wiremock -->
@@ -260,7 +279,7 @@
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
-        <version>3.8.1</version>
+        <version>3.12.0</version>
         <scope>test</scope>
       </dependency>
 
@@ -269,6 +288,12 @@
         <artifactId>jetty-security</artifactId>
         <version>9.4.15.v20190215</version>
         <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-annotations</artifactId>
+        <version>4.2.3</version>
       </dependency>
 
     </dependencies>
